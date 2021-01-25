@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/A Brand New Adventure.ogg-0945051d3ef85234ae10369d30fbdd06.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/A Brand New Adventure.ogg"
+dest_files=[ "res://.import/A Brand New Adventure.ogg-0945051d3ef85234ae10369d30fbdd06.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

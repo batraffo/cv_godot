@@ -32,6 +32,7 @@ func _physics_process(delta):
 		if is_on_floor():
 			if Input.is_action_just_pressed("ui_up"):
 				motion.y=JUMP_HEIGHT
+				$JumpEffect.play()
 			if(friction):
 				motion.x=lerp(motion.x,0,0.2)
 		else:
@@ -52,5 +53,6 @@ func _on_Sprite_animation_finished():
 	animation_finished= true
 	var sprite = get_node("Sprite")
 	print("once")
-	get_node("Camera2D/CanvasLayer/Control/Panel/GridContainer/Born").show()
+	get_node("AnimationPlayer").play("BornFading")
+	get_parent().get_node("Music").play()
 	sprite.disconnect("animation_finished",self,"_on_Sprite_animation_finished")

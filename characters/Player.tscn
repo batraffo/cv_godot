@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://assets/Sprites/Player/Idle0.png" type="Texture" id=1]
 [ext_resource path="res://assets/Sprites/Player/Jump3.png" type="Texture" id=2]
@@ -13,18 +13,19 @@
 [ext_resource path="res://assets/PixelRPG.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://assets/Sprites/Sky.png" type="Texture" id=12]
 [ext_resource path="res://characters/Player.gd" type="Script" id=13]
+[ext_resource path="res://assets/sounds/Jump_03.wav" type="AudioStream" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "Run",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 7 ) ],
 "loop": false,
@@ -54,6 +55,78 @@ font_data = ExtResource( 11 )
 [sub_resource type="DynamicFont" id=4]
 size = 10
 font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 11
+extra_spacing_space = -5
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 10
+extra_spacing_space = -5
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 12
+extra_spacing_space = -5
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 11
+extra_spacing_space = -5
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 10
+extra_spacing_space = -5
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 14
+extra_spacing_space = -5
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 9
+extra_spacing_space = -5
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 14
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 10
+extra_spacing_space = -5
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 8
+extra_spacing_space = -5
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 6
+extra_spacing_space = -5
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 6
+font_data = ExtResource( 11 )
+
+[sub_resource type="Animation" id=7]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D/CanvasLayer/Control/Panel/GridContainer/Born:self_modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 13 )
@@ -91,6 +164,7 @@ margin_left = 424.0
 margin_right = 600.0
 margin_bottom = 320.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -101,179 +175,297 @@ margin_right = 169.0
 margin_bottom = 54.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
+custom_constants/vseparation = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Raffaele" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-margin_right = 157.0
+margin_right = 163.0
 margin_bottom = 15.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
 text = "Raffaele Ariano CV"
 
 [node name="Born" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-visible = false
-margin_top = 19.0
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 20.0
 margin_right = 163.0
-margin_bottom = 44.0
+margin_bottom = 45.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.117647, 1, 0, 1 )
 text = "Born: Torremaggiore, Italy
 	     13/07/1997"
 
-[node name="Raffaele3" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-visible = false
-margin_top = 54.0
-margin_right = 161.0
+[node name="HighSchool" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+margin_top = 50.0
+margin_right = 163.0
+margin_bottom = 77.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 1, 0.552941, 1 )
+text = "Scientific High School
+I.S.I.S.S. Fiani-Leccisotti"
+align = 1
+
+[node name="HighDate" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+margin_top = 82.0
+margin_right = 163.0
+margin_bottom = 107.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 1, 0.552941, 1 )
+text = "  Diploma date: July 2015
+  Vote: 80/100"
+
+[node name="GridContainer2" type="GridContainer" parent="Camera2D/CanvasLayer/Control/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 115.0
+margin_right = -5.0
+margin_bottom = 111.0
+custom_constants/vseparation = 4
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Pisa" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer2"]
+margin_right = 163.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0.760784, 1, 1 )
+text = "University of Pisa
+Computer Science"
+align = 1
+
+[node name="degree" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer2"]
+margin_top = 31.0
+margin_right = 163.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0, 0.760784, 1, 1 )
+text = "Bachelor's degree"
+align = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Begin" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer2"]
+margin_top = 47.0
+margin_right = 163.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0, 0.760784, 1, 1 )
+text = "   Begin: September 2015"
+
+[node name="End" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer2"]
+margin_top = 62.0
+margin_right = 163.0
+margin_bottom = 73.0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0, 0.760784, 1, 1 )
+text = "   End: June 2020"
+
+[node name="Vote" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer2"]
+margin_top = 77.0
+margin_right = 163.0
+margin_bottom = 88.0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0, 0.760784, 1, 1 )
+text = "   Vote: 101/110"
+
+[node name="GridContainer3" type="GridContainer" parent="Camera2D/CanvasLayer/Control/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 208.0
+margin_right = -8.0
+custom_constants/vseparation = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Internship" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer3"]
+margin_right = 164.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 0.976471, 0.509804, 1, 1 )
+text = "Internship"
+align = 1
+
+[node name="Internship2" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer3"]
+margin_top = 19.0
+margin_right = 164.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.976471, 0.509804, 1, 1 )
+text = "Istituto di Scienza e Tecnologie
+dell'Informazione"
+
+[node name="Internship3" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer3"]
+margin_top = 46.0
+margin_right = 164.0
 margin_bottom = 69.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
-text = "Raffaele Ariano CV"
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.976471, 0.509804, 1, 1 )
+text = "  Begin: March 2020
+  End: May 2020"
 
-[node name="Raffaele4" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-visible = false
-margin_top = 19.0
-margin_right = 157.0
-margin_bottom = 34.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
-text = "Raffaele Ariano CV"
+[node name="Skill" type="Label" parent="Camera2D/CanvasLayer/Control/Panel"]
+margin_top = 280.0
+margin_right = 176.0
+margin_bottom = 295.0
+custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
+text = "SKILLS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Raffaele5" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-visible = false
-margin_top = 19.0
-margin_right = 157.0
-margin_bottom = 34.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
-text = "Raffaele Ariano CV"
+[node name="Skills" type="GridContainer" parent="Camera2D/CanvasLayer/Control/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 295.0
+margin_right = -8.0
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Raffaele6" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-visible = false
-margin_top = 19.0
-margin_right = 157.0
-margin_bottom = 34.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
-text = "Raffaele Ariano CV"
+[node name="Skill" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+margin_right = 51.0
+margin_bottom = 11.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
+text = "- C/C++"
 
-[node name="Raffaele7" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-visible = false
-margin_top = 19.0
-margin_right = 157.0
-margin_bottom = 34.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
-text = "Raffaele Ariano CV"
+[node name="Skill2" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+margin_left = 55.0
+margin_right = 116.0
+margin_bottom = 11.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
+text = "- Java"
 
-[node name="Raffaele8" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-visible = false
-margin_top = 19.0
-margin_right = 157.0
-margin_bottom = 34.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
-text = "Raffaele Ariano CV"
+[node name="Skill3" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+margin_left = 120.0
+margin_right = 171.0
+margin_bottom = 11.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
+text = "- C#"
 
-[node name="Raffaele9" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-visible = false
-margin_top = 19.0
-margin_right = 157.0
-margin_bottom = 34.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
-text = "Raffaele Ariano CV"
+[node name="Skill4" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+margin_top = 15.0
+margin_right = 51.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
+text = "- Unity"
 
-[node name="Raffaele10" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-visible = false
-margin_top = 19.0
-margin_right = 157.0
-margin_bottom = 34.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
-text = "Raffaele Ariano CV"
+[node name="Skill5" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+margin_left = 55.0
+margin_top = 15.0
+margin_right = 116.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
+text = "- Android"
 
-[node name="Raffaele11" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-visible = false
-margin_top = 19.0
-margin_right = 157.0
-margin_bottom = 34.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
-text = "Raffaele Ariano CV"
+[node name="Skill6" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+margin_left = 120.0
+margin_top = 15.0
+margin_right = 171.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
+text = "- Godot"
 
-[node name="Raffaele12" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-visible = false
-margin_top = 19.0
-margin_right = 157.0
-margin_bottom = 34.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
-text = "Raffaele Ariano CV"
+[node name="Skill7" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+margin_top = 30.0
+margin_right = 51.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
+text = "- UX"
 
-[node name="Raffaele13" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-visible = false
-margin_top = 19.0
-margin_right = 157.0
-margin_bottom = 34.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
-text = "Raffaele Ariano CV"
+[node name="Skill8" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+margin_left = 55.0
+margin_top = 31.0
+margin_right = 116.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 15 )
+custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
+text = "- Game Desing"
 
-[node name="Raffaele14" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-visible = false
-margin_top = 19.0
-margin_right = 157.0
-margin_bottom = 34.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
-text = "Raffaele Ariano CV"
+[node name="Skill9" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+margin_left = 120.0
+margin_top = 30.0
+margin_right = 171.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
+text = "- AR"
 
-[node name="Raffaele15" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-visible = false
-margin_top = 19.0
-margin_right = 157.0
-margin_bottom = 34.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
-text = "Raffaele Ariano CV"
+[node name="Skill10" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+margin_top = 45.0
+margin_right = 51.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
+text = "- Problem
+"
+valign = 1
 
-[node name="Raffaele16" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-visible = false
-margin_top = 19.0
-margin_right = 157.0
-margin_bottom = 34.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
-text = "Raffaele Ariano CV"
+[node name="Skill11" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+margin_left = 55.0
+margin_top = 49.0
+margin_right = 116.0
+margin_bottom = 55.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
+text = "- Communication"
 
-[node name="Raffaele17" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-visible = false
-margin_top = 38.0
-margin_right = 157.0
-margin_bottom = 53.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
-text = "Raffaele Ariano CV"
+[node name="Skill12" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+margin_left = 120.0
+margin_top = 49.0
+margin_right = 171.0
+margin_bottom = 55.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
+text = "- Teamwork"
+valign = 1
 
-[node name="Raffaele18" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-visible = false
-margin_top = 57.0
-margin_right = 157.0
-margin_bottom = 72.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
-text = "Raffaele Ariano CV"
-
-[node name="Raffaele19" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
-visible = false
-margin_top = 76.0
-margin_right = 157.0
-margin_bottom = 91.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
-text = "Raffaele Ariano CV"
+[node name="Skill 10 2" type="Label" parent="Camera2D/CanvasLayer/Control/Panel"]
+margin_left = 12.0
+margin_top = 346.0
+margin_right = 63.0
+margin_bottom = 352.0
+custom_fonts/font = SubResource( 17 )
+custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
+text = "Solving"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 follow_viewport_scale = 10.0
@@ -288,3 +480,10 @@ centered = false
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/BornFading = SubResource( 7 )
+
+[node name="JumpEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 14 )
+volume_db = -5.0
