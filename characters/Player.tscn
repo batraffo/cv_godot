@@ -1,0 +1,290 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/Sprites/Player/Idle0.png" type="Texture" id=1]
+[ext_resource path="res://assets/Sprites/Player/Jump3.png" type="Texture" id=2]
+[ext_resource path="res://assets/Sprites/Player/Jump0.png" type="Texture" id=3]
+[ext_resource path="res://assets/Sprites/Player/Run0.png" type="Texture" id=4]
+[ext_resource path="res://assets/Sprites/Player/Run3.png" type="Texture" id=5]
+[ext_resource path="res://assets/Sprites/Player/Jump4.png" type="Texture" id=6]
+[ext_resource path="res://assets/Sprites/Player/Run4.png" type="Texture" id=7]
+[ext_resource path="res://assets/Sprites/Player/Run7.png" type="Texture" id=8]
+[ext_resource path="res://assets/Sprites/Player/Run1.png" type="Texture" id=9]
+[ext_resource path="res://assets/Sprites/Player/Run2.png" type="Texture" id=10]
+[ext_resource path="res://assets/PixelRPG.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://assets/Sprites/Sky.png" type="Texture" id=12]
+[ext_resource path="res://characters/Player.gd" type="Script" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "EggExit",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "Fall",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 15.5
+height = 25.0
+
+[sub_resource type="DynamicFont" id=3]
+size = 14
+extra_spacing_space = -5
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 10
+font_data = ExtResource( 11 )
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 13 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 4 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 200, -100 )
+current = true
+limit_top = -150
+limit_bottom = 0
+smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="Control" type="Control" parent="Camera2D/CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Camera2D/CanvasLayer/Control"]
+self_modulate = Color( 1, 1, 1, 0.631373 )
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 424.0
+margin_right = 600.0
+margin_bottom = 320.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Camera2D/CanvasLayer/Control/Panel"]
+margin_left = 8.0
+margin_top = 4.0
+margin_right = 169.0
+margin_bottom = 54.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Raffaele" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+margin_right = 157.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
+text = "Raffaele Ariano CV"
+
+[node name="Born" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+visible = false
+margin_top = 19.0
+margin_right = 163.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.117647, 1, 0, 1 )
+text = "Born: Torremaggiore, Italy
+	     13/07/1997"
+
+[node name="Raffaele3" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+visible = false
+margin_top = 54.0
+margin_right = 161.0
+margin_bottom = 69.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
+text = "Raffaele Ariano CV"
+
+[node name="Raffaele4" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+visible = false
+margin_top = 19.0
+margin_right = 157.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
+text = "Raffaele Ariano CV"
+
+[node name="Raffaele5" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+visible = false
+margin_top = 19.0
+margin_right = 157.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
+text = "Raffaele Ariano CV"
+
+[node name="Raffaele6" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+visible = false
+margin_top = 19.0
+margin_right = 157.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
+text = "Raffaele Ariano CV"
+
+[node name="Raffaele7" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+visible = false
+margin_top = 19.0
+margin_right = 157.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
+text = "Raffaele Ariano CV"
+
+[node name="Raffaele8" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+visible = false
+margin_top = 19.0
+margin_right = 157.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
+text = "Raffaele Ariano CV"
+
+[node name="Raffaele9" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+visible = false
+margin_top = 19.0
+margin_right = 157.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
+text = "Raffaele Ariano CV"
+
+[node name="Raffaele10" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+visible = false
+margin_top = 19.0
+margin_right = 157.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
+text = "Raffaele Ariano CV"
+
+[node name="Raffaele11" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+visible = false
+margin_top = 19.0
+margin_right = 157.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
+text = "Raffaele Ariano CV"
+
+[node name="Raffaele12" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+visible = false
+margin_top = 19.0
+margin_right = 157.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
+text = "Raffaele Ariano CV"
+
+[node name="Raffaele13" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+visible = false
+margin_top = 19.0
+margin_right = 157.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
+text = "Raffaele Ariano CV"
+
+[node name="Raffaele14" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+visible = false
+margin_top = 19.0
+margin_right = 157.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
+text = "Raffaele Ariano CV"
+
+[node name="Raffaele15" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+visible = false
+margin_top = 19.0
+margin_right = 157.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
+text = "Raffaele Ariano CV"
+
+[node name="Raffaele16" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+visible = false
+margin_top = 19.0
+margin_right = 157.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
+text = "Raffaele Ariano CV"
+
+[node name="Raffaele17" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+visible = false
+margin_top = 38.0
+margin_right = 157.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
+text = "Raffaele Ariano CV"
+
+[node name="Raffaele18" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+visible = false
+margin_top = 57.0
+margin_right = 157.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
+text = "Raffaele Ariano CV"
+
+[node name="Raffaele19" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+visible = false
+margin_top = 76.0
+margin_right = 157.0
+margin_bottom = 91.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
+text = "Raffaele Ariano CV"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+follow_viewport_scale = 10.0
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0.1 )
+motion_mirroring = Vector2( 640, 640 )
+
+[node name="Sky" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 12 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
