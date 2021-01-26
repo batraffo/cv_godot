@@ -14,24 +14,19 @@
 [ext_resource path="res://assets/Sprites/Sky.png" type="Texture" id=12]
 [ext_resource path="res://characters/Player.gd" type="Script" id=13]
 [ext_resource path="res://assets/sounds/Jump_03.wav" type="AudioStream" id=14]
-[ext_resource path="res://entities/HadokenSpawner.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/Sprites/Player/Jump1.png" type="Texture" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "Run",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": false,
-"name": "Jump",
-"speed": 5.0
+"frames": [ ExtResource( 4 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 7 ) ],
 "loop": false,
@@ -41,6 +36,16 @@ animations = [ {
 "frames": [ ExtResource( 6 ) ],
 "loop": false,
 "name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Hadoken",
 "speed": 5.0
 } ]
 
@@ -131,7 +136,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=18]
 resource_name = "HighDateBlink"
 length = 1.8
 step = 0.2
@@ -148,8 +153,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=18]
-resource_name = "HighSchoolBlink"
+[sub_resource type="Animation" id=19]
 length = 1.8
 step = 0.2
 tracks/0/type = "value"
@@ -165,7 +169,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=20]
 resource_name = "InternshipBlink"
 length = 1.8
 step = 0.2
@@ -182,8 +186,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=20]
-resource_name = "PisaBlink"
+[sub_resource type="Animation" id=21]
 length = 1.8
 step = 0.2
 tracks/0/type = "value"
@@ -223,8 +226,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=21]
-resource_name = "PisaEndBlink"
+[sub_resource type="Animation" id=22]
 length = 1.8
 step = 0.2
 tracks/0/type = "value"
@@ -621,16 +623,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="HadokenSpawner" parent="." instance=ExtResource( 15 )]
-position = Vector2( 20, 20 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/BornFading = SubResource( 17 )
-anims/HighDateBlink = SubResource( 19 )
-anims/HighSchoolBlink = SubResource( 18 )
-anims/InternshipBlink = SubResource( 22 )
-anims/PisaBlink = SubResource( 20 )
-anims/PisaEndBlink = SubResource( 21 )
+anims/HighDateBlink = SubResource( 18 )
+anims/HighSchoolBlink = SubResource( 19 )
+anims/InternshipBlink = SubResource( 20 )
+anims/PisaBlink = SubResource( 21 )
+anims/PisaEndBlink = SubResource( 22 )
 anims/SkillTitleBlink = SubResource( 23 )
 
 [node name="JumpEffect" type="AudioStreamPlayer2D" parent="."]

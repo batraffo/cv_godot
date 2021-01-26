@@ -1,5 +1,9 @@
 extends KinematicBody2D
 
+var hadoken_scene=load("res://objects/Hadoken.tscn")
+
+var is_left=false
+
 const UP=Vector2(0,-1) #la direzione su
 const GRAVITY=20
 const MAX_SPEED=200
@@ -20,10 +24,12 @@ func _physics_process(delta):
 		if Input.is_action_pressed("ui_right"):
 			motion.x=min(motion.x+ACCELLERATION,MAX_SPEED)
 			$Sprite.flip_h=false
+			is_left=false
 			$Sprite.play("Run")
 		elif Input.is_action_pressed("ui_left"):
 			motion.x=max(motion.x-ACCELLERATION,-MAX_SPEED)
 			$Sprite.flip_h=true
+			is_left=true
 			$Sprite.play("Run")
 		else:
 			$Sprite.play("Idle")
@@ -48,6 +54,26 @@ func _physics_process(delta):
 	else:
 		$Sprite.play("EggExit")
 
+
+func _unhandled_key_input(event):
+	if(event.is_action_pressed("hadoken")):
+		$Sprite.play("Hadoken")
+		shoot()
+
+func shoot():
+	var hadoken = hadoken_scene.instance()
+	var posyplustwenty=position.y+20
+	var posxplustwenty
+	var rotationHadoken
+	if is_left:
+		rotationHadoken =PI
+		posxplustwenty= position.x-20
+	else:
+		rotationHadoken =0
+		posxplustwenty= position.x+20
+	var hadokenpos = Vector2(posxplustwenty,posyplustwenty) #it must start from the hands
+	hadoken.transform= Transform2D(rotationHadoken,hadokenpos)
+	get_parent().add_child((hadoken))
 
 func _on_Sprite_animation_finished():
 	animation_finished= true
