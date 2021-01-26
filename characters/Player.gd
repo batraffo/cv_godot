@@ -17,7 +17,7 @@ func _ready():
 	var sprite = get_node("Sprite")
 	sprite.connect("animation_finished",self,"_on_Sprite_animation_finished")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if(animation_finished):
 		motion.y+=GRAVITY
 		var friction = false
