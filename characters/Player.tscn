@@ -17,24 +17,24 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "Run",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 7 ) ],
-"loop": false,
-"name": "EggExit",
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": false,
 "name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "EggExit",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
@@ -66,12 +66,12 @@ size = 10
 extra_spacing_space = -5
 font_data = ExtResource( 11 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=7]
 size = 12
 extra_spacing_space = -5
 font_data = ExtResource( 11 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=8]
 size = 11
 extra_spacing_space = -5
 font_data = ExtResource( 11 )
@@ -81,40 +81,42 @@ size = 10
 extra_spacing_space = -5
 font_data = ExtResource( 11 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=10]
 size = 14
 extra_spacing_space = -5
 font_data = ExtResource( 11 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=11]
 size = 9
 extra_spacing_space = -5
 font_data = ExtResource( 11 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=12]
 size = 14
 font_data = ExtResource( 11 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=13]
 size = 10
 extra_spacing_space = -5
 font_data = ExtResource( 11 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=14]
 size = 8
+extra_spacing_space = -5
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 6
 extra_spacing_space = -5
 font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=16]
 size = 6
-extra_spacing_space = -5
 font_data = ExtResource( 11 )
 
-[sub_resource type="DynamicFont" id=17]
-size = 6
-font_data = ExtResource( 11 )
-
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=17]
+length = 1.8
+step = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D/CanvasLayer/Control/Panel/GridContainer/Born:self_modulate")
 tracks/0/interp = 2
@@ -122,10 +124,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [node name="Player" type="KinematicBody2D"]
@@ -234,7 +236,7 @@ margin_right = 163.0
 margin_bottom = 27.0
 size_flags_horizontal = 3
 size_flags_vertical = 5
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0.760784, 1, 1 )
 text = "University of Pisa
 Computer Science"
@@ -244,7 +246,7 @@ align = 1
 margin_top = 31.0
 margin_right = 163.0
 margin_bottom = 43.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0.760784, 1, 1 )
 text = "Bachelor's degree"
 align = 1
@@ -291,7 +293,7 @@ __meta__ = {
 margin_right = 164.0
 margin_bottom = 15.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0.976471, 0.509804, 1, 1 )
 text = "Internship"
 align = 1
@@ -301,7 +303,7 @@ margin_top = 19.0
 margin_right = 164.0
 margin_bottom = 42.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.976471, 0.509804, 1, 1 )
 text = "Istituto di Scienza e Tecnologie
 dell'Informazione"
@@ -311,7 +313,7 @@ margin_top = 46.0
 margin_right = 164.0
 margin_bottom = 69.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.976471, 0.509804, 1, 1 )
 text = "  Begin: March 2020
   End: May 2020"
@@ -320,7 +322,7 @@ text = "  Begin: March 2020
 margin_top = 280.0
 margin_right = 176.0
 margin_bottom = 295.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "SKILLS"
 align = 1
@@ -340,117 +342,117 @@ __meta__ = {
 }
 
 [node name="Skill" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
-margin_right = 51.0
+margin_right = 45.0
 margin_bottom = 11.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- C/C++"
 
 [node name="Skill2" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
-margin_left = 55.0
-margin_right = 116.0
+margin_left = 49.0
+margin_right = 110.0
 margin_bottom = 11.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- Java"
 
 [node name="Skill3" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
-margin_left = 120.0
-margin_right = 171.0
+margin_left = 114.0
+margin_right = 159.0
 margin_bottom = 11.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- C#"
 
 [node name="Skill4" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
 margin_top = 15.0
-margin_right = 51.0
+margin_right = 45.0
 margin_bottom = 26.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- Unity"
 
 [node name="Skill5" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
-margin_left = 55.0
+margin_left = 49.0
 margin_top = 15.0
-margin_right = 116.0
+margin_right = 110.0
 margin_bottom = 26.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- Android"
 
 [node name="Skill6" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
-margin_left = 120.0
+margin_left = 114.0
 margin_top = 15.0
-margin_right = 171.0
+margin_right = 159.0
 margin_bottom = 26.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- Godot"
 
 [node name="Skill7" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
 margin_top = 30.0
-margin_right = 51.0
+margin_right = 45.0
 margin_bottom = 41.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- UX"
 
 [node name="Skill8" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
-margin_left = 55.0
+margin_left = 49.0
 margin_top = 31.0
-margin_right = 116.0
+margin_right = 110.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- Game Desing"
 
 [node name="Skill9" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
-margin_left = 120.0
+margin_left = 114.0
 margin_top = 30.0
-margin_right = 171.0
+margin_right = 159.0
 margin_bottom = 41.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- AR"
 
 [node name="Skill10" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
 margin_top = 45.0
-margin_right = 51.0
+margin_right = 45.0
 margin_bottom = 60.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- Problem
 "
 valign = 1
 
 [node name="Skill11" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
-margin_left = 55.0
+margin_left = 49.0
 margin_top = 49.0
-margin_right = 116.0
+margin_right = 110.0
 margin_bottom = 55.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- Communication"
 
 [node name="Skill12" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
-margin_left = 120.0
+margin_left = 114.0
 margin_top = 49.0
-margin_right = 171.0
+margin_right = 159.0
 margin_bottom = 55.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- Teamwork"
 valign = 1
@@ -460,7 +462,7 @@ margin_left = 12.0
 margin_top = 346.0
 margin_right = 63.0
 margin_bottom = 352.0
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 16 )
 custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "Solving"
 __meta__ = {
@@ -482,7 +484,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/BornFading = SubResource( 7 )
+anims/BornFading = SubResource( 17 )
 
 [node name="JumpEffect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 14 )
