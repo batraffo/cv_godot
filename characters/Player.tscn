@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://assets/Sprites/Player/Idle0.png" type="Texture" id=1]
 [ext_resource path="res://assets/Sprites/Player/Jump3.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://characters/Player.gd" type="Script" id=13]
 [ext_resource path="res://assets/sounds/Jump_03.wav" type="AudioStream" id=14]
 [ext_resource path="res://assets/Sprites/Player/Jump1.png" type="Texture" id=15]
+[ext_resource path="res://assets/sounds/foom_0.wav" type="AudioStream" id=16]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -44,7 +45,7 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 3 ) ],
-"loop": true,
+"loop": false,
 "name": "Hadoken",
 "speed": 5.0
 } ]
@@ -333,6 +334,7 @@ custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
 text = "Raffaele Ariano CV"
 
 [node name="Born" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 20.0
 margin_right = 163.0
 margin_bottom = 45.0
@@ -637,3 +639,16 @@ anims/SkillTitleBlink = SubResource( 23 )
 [node name="JumpEffect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 14 )
 volume_db = -5.0
+
+[node name="HadokenEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 16 )
+
+[node name="RayCastRight2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 25, 0 )
+collision_mask = 1024
+
+[node name="RayCastLeft2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -25, 0 )
+collision_mask = 1024

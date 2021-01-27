@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var hadoken_scene=load("res://objects/Hadoken.tscn")
+const HADOKEN_SCENE=preload("res://objects/Hadoken.tscn")
 
 var is_left=false
 
@@ -12,6 +12,7 @@ const JUMP_HEIGHT=-450
 var motion=Vector2()
 
 var animation_finished =false
+var is_hadoken_animation_active=false
 
 func _ready():
 	var sprite = get_node("Sprite")
@@ -19,20 +20,32 @@ func _ready():
 
 func _physics_process(_delta):
 	if(animation_finished):
+		
+		#hadoken animation finished, maybe there is a better solution
+		if $Sprite.animation == "Hadoken" && $Sprite.frame == $Sprite.frames.get_frame_count("Hadoken")-1:
+			is_hadoken_animation_active=false
+		
 		motion.y+=GRAVITY
 		var friction = false
 		if Input.is_action_pressed("ui_right"):
 			motion.x=min(motion.x+ACCELLERATION,MAX_SPEED)
 			$Sprite.flip_h=false
 			is_left=false
-			$Sprite.play("Run")
+			$RayCastRight2D.set_enabled(true)
+			$RayCastLeft2D.set_enabled(false)
+			if(!is_hadoken_animation_active):
+				$Sprite.play("Run")
 		elif Input.is_action_pressed("ui_left"):
 			motion.x=max(motion.x-ACCELLERATION,-MAX_SPEED)
 			$Sprite.flip_h=true
 			is_left=true
-			$Sprite.play("Run")
+			$RayCastRight2D.set_enabled(false)
+			$RayCastLeft2D.set_enabled(true)
+			if(!is_hadoken_animation_active):
+				$Sprite.play("Run")
 		else:
-			$Sprite.play("Idle")
+			if(!is_hadoken_animation_active):
+				$Sprite.play("Idle")
 			friction=true
 		
 		if is_on_floor():
@@ -42,13 +55,13 @@ func _physics_process(_delta):
 			if(friction):
 				motion.x=lerp(motion.x,0,0.2)
 		else:
-			if(motion.y<0):
-				$Sprite.play("Jump")
-			else:
-				$Sprite.play("Fall")
+			if(!is_hadoken_animation_active):
+				if(motion.y<0):
+					$Sprite.play("Jump")
+				else:
+					$Sprite.play("Fall")
 			if(friction):
 				motion.x=lerp(motion.x,0,0.05)
-		
 		motion=move_and_slide(motion,UP)
 		pass
 	else:
@@ -57,11 +70,15 @@ func _physics_process(_delta):
 
 func _unhandled_key_input(event):
 	if(event.is_action_pressed("hadoken")):
-		$Sprite.play("Hadoken")
-		shoot()
+		if(!($RayCastLeft2D.is_colliding() or $RayCastRight2D.is_colliding())):
+			if(get_parent().get_tree().get_nodes_in_group("hadoken").size() < 2):
+				$HadokenEffect.play()
+				is_hadoken_animation_active=true
+				$Sprite.play("Hadoken")
+				shoot()
 
 func shoot():
-	var hadoken = hadoken_scene.instance()
+	var hadoken = HADOKEN_SCENE.instance()
 	var posyplustwenty=position.y+20
 	var posxplustwenty
 	var rotationHadoken
