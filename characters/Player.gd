@@ -4,7 +4,7 @@ const HADOKEN_SCENE=preload("res://objects/Hadoken.tscn")
 
 var is_left=false
 
-const UP=Vector2(0,-1) #la direzione su
+const UP=Vector2(0,-1)
 const GRAVITY=20
 const MAX_SPEED=200
 const ACCELLERATION=50
@@ -13,6 +13,7 @@ var motion=Vector2()
 
 var animation_finished =false
 var is_hadoken_animation_active=false
+var secondJump=true
 
 func _ready():
 	var sprite = get_node("Sprite")
@@ -49,17 +50,27 @@ func _physics_process(_delta):
 			friction=true
 		
 		if is_on_floor():
+			secondJump=true
 			if Input.is_action_just_pressed("ui_up"):
 				motion.y=JUMP_HEIGHT
 				$JumpEffect.play()
 			if(friction):
 				motion.x=lerp(motion.x,0,0.2)
 		else:
+			if Input.is_action_just_pressed("ui_up"):
+				
+				if(secondJump):
+					secondJump=false
+					motion.y=JUMP_HEIGHT/1.5
+					$JumpEffect.play()
+			
+			#play animation
 			if(!is_hadoken_animation_active):
 				if(motion.y<0):
 					$Sprite.play("Jump")
 				else:
 					$Sprite.play("Fall")
+			
 			if(friction):
 				motion.x=lerp(motion.x,0,0.05)
 		motion=move_and_slide(motion,UP)
