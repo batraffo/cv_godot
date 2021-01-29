@@ -19,3 +19,4 @@ func _on_Headband_body_entered(body):
 	if body.is_in_group("player"):
 		$Headband.hide()
 		$Headband/AudioStreamPlayer2D.play()
+		#also make instruction for fireball appears

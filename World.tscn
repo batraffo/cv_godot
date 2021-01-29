@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tile/DirtAutoTile.tres" type="TileSet" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://objects/Computer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://World.gd" type="Script" id=7]
 [ext_resource path="res://objects/Headband.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/Sprites/keys/Space.png" type="Texture" id=9]
+[ext_resource path="res://assets/Sprites/keys/Keyboard keys (transparent).png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 5 )
@@ -23,6 +25,37 @@ scale = Vector2( 0.2, 0.2 )
 [node name="Computer" parent="." instance=ExtResource( 6 )]
 position = Vector2( 899, 35 )
 scale = Vector2( 1.5, 1.5 )
+
+[node name="JustTutorialThings" type="Node" parent="."]
+
+[node name="Right" type="Sprite" parent="JustTutorialThings"]
+visible = false
+position = Vector2( 128, -59 )
+texture = ExtResource( 10 )
+vframes = 4
+hframes = 8
+frame = 31
+
+[node name="Left" type="Sprite" parent="JustTutorialThings"]
+visible = false
+position = Vector2( 11, -62 )
+texture = ExtResource( 10 )
+vframes = 4
+hframes = 8
+frame = 29
+
+[node name="Up" type="Sprite" parent="JustTutorialThings"]
+visible = false
+position = Vector2( 74, -65 )
+texture = ExtResource( 10 )
+vframes = 4
+hframes = 8
+frame = 22
+
+[node name="Space" type="Sprite" parent="JustTutorialThings"]
+visible = false
+position = Vector2( 1123, -78 )
+texture = ExtResource( 9 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 32 )
