@@ -44,7 +44,7 @@ margin_top = -24.0
 margin_right = 194.0
 margin_bottom = 1.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.678431, 0.4, 0.4, 1 )
+custom_colors/font_color = Color( 1, 0.529412, 0.529412, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "+ Classic Videogame Knowledge
 + Computer Science Passion"

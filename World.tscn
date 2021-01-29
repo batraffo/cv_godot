@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tile/DirtAutoTile.tres" type="TileSet" id=2]
@@ -11,8 +11,55 @@
 [ext_resource path="res://assets/Sprites/keys/Space.png" type="Texture" id=9]
 [ext_resource path="res://assets/Sprites/keys/Keyboard keys (transparent).png" type="Texture" id=10]
 
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 5 )
+
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "TutorialFade"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("JustTutorialThings:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "TutorialFade2"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("JustTutorialThings/Label5:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("JustTutorialThings/Space:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="World" type="Node2D"]
 script = ExtResource( 7 )
@@ -26,36 +73,106 @@ scale = Vector2( 0.2, 0.2 )
 position = Vector2( 899, 35 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="JustTutorialThings" type="Node" parent="."]
+[node name="JustTutorialThings" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 
 [node name="Right" type="Sprite" parent="JustTutorialThings"]
-visible = false
-position = Vector2( 128, -59 )
+position = Vector2( 72, -192 )
 texture = ExtResource( 10 )
 vframes = 4
 hframes = 8
 frame = 31
 
 [node name="Left" type="Sprite" parent="JustTutorialThings"]
-visible = false
-position = Vector2( 11, -62 )
+position = Vector2( 72.003, -141.75 )
 texture = ExtResource( 10 )
 vframes = 4
 hframes = 8
 frame = 29
 
 [node name="Up" type="Sprite" parent="JustTutorialThings"]
-visible = false
-position = Vector2( 74, -65 )
+position = Vector2( 72, -97 )
+texture = ExtResource( 10 )
+vframes = 4
+hframes = 8
+frame = 22
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Up2" type="Sprite" parent="JustTutorialThings"]
+position = Vector2( 1440, -204 )
 texture = ExtResource( 10 )
 vframes = 4
 hframes = 8
 frame = 22
 
 [node name="Space" type="Sprite" parent="JustTutorialThings"]
-visible = false
-position = Vector2( 1123, -78 )
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 1092, -77 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="JustTutorialThings"]
+margin_top = -200.0
+margin_right = 46.0
+margin_bottom = -183.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Press    to go right"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="JustTutorialThings"]
+margin_top = -150.0
+margin_right = 208.0
+margin_bottom = -133.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Press    to go left"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="JustTutorialThings"]
+margin_top = -100.0
+margin_right = 208.0
+margin_bottom = -83.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Press    to jump"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="JustTutorialThings"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 1000.0
+margin_top = -83.0
+margin_right = 1308.0
+margin_bottom = -66.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Press       to shoot fireball!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="JustTutorialThings"]
+margin_left = 1369.0
+margin_top = -208.0
+margin_right = 1717.0
+margin_bottom = -191.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Press    in midair to double-jump"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 32 )
@@ -116,5 +233,9 @@ __meta__ = {
 [node name="Music" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 3 )
 volume_db = -10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/TutorialFade = SubResource( 3 )
+anims/TutorialFade2 = SubResource( 4 )
 [connection signal="body_entered" from="Headband" to="." method="_on_Headband_body_entered"]
 [connection signal="body_entered" from="Headband" to="Player" method="_on_Headband_body_entered"]

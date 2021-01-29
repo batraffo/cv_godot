@@ -111,6 +111,7 @@ func _on_Sprite_animation_finished():
 	print("once")
 	get_node("AnimationPlayer").play("BornFading")
 	get_parent().get_node("Sounds/Music").play()
+	get_parent().get_node("AnimationPlayer").play("TutorialFade")
 	sprite.disconnect("animation_finished",self,"_on_Sprite_animation_finished")
 
 
