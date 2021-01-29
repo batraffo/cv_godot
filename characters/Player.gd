@@ -14,6 +14,7 @@ var motion=Vector2()
 var animation_finished =false
 var is_hadoken_animation_active=false
 var secondJump=true
+var canIShotHadoken=false
 
 func _ready():
 	var sprite = get_node("Sprite")
@@ -80,13 +81,14 @@ func _physics_process(_delta):
 
 
 func _unhandled_key_input(event):
-	if(event.is_action_pressed("hadoken")):
-		if(!($RayCastLeft2D.is_colliding() or $RayCastRight2D.is_colliding())):
-			if(get_parent().get_tree().get_nodes_in_group("hadoken").size() < 2):
-				$HadokenEffect.play()
-				is_hadoken_animation_active=true
-				$Sprite.play("Hadoken")
-				shoot()
+	if(canIShotHadoken):
+		if(event.is_action_pressed("hadoken")):
+			if(!($RayCastLeft2D.is_colliding() or $RayCastRight2D.is_colliding())):
+				if(get_parent().get_tree().get_nodes_in_group("hadoken").size() < 2):
+					$HadokenEffect.play()
+					is_hadoken_animation_active=true
+					$Sprite.play("Hadoken")
+					shoot()
 
 func shoot():
 	var hadoken = HADOKEN_SCENE.instance()
@@ -108,5 +110,10 @@ func _on_Sprite_animation_finished():
 	var sprite = get_node("Sprite")
 	print("once")
 	get_node("AnimationPlayer").play("BornFading")
-	get_parent().get_node("Music").play()
+	get_parent().get_node("Sounds/Music").play()
 	sprite.disconnect("animation_finished",self,"_on_Sprite_animation_finished")
+
+
+func _on_Headband_body_entered(body):
+	if(body.is_in_group("player")):
+		canIShotHadoken=true

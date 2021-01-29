@@ -8,7 +8,7 @@ var velocity = Vector2()
 
 var direction = 1 #it's right
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	velocity.x=SPEED *direction
 	$AnimatedSprite.play("Walk")
 	velocity.y += GRAVITY
