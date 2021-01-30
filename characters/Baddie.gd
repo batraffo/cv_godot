@@ -24,6 +24,11 @@ func _physics_process(_delta):
 		direction= direction * -1
 		$AnimatedSprite.flip_h=!$AnimatedSprite.flip_h
 		$RayCast2D.position.x = $RayCast2D.position.x * -1
+	
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider.name.casecmp_to("Player") ==0:
+			collision.collider.hit(position.x)
 
 func die(reversed):
 	set_physics_process(false)

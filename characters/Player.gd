@@ -15,6 +15,7 @@ var animation_finished =false
 var is_hadoken_animation_active=false
 var secondJump=true
 var canIShotHadoken=false
+var canIDoubleJump=false
 
 func _ready():
 	var sprite = get_node("Sprite")
@@ -28,7 +29,9 @@ func _physics_process(_delta):
 			is_hadoken_animation_active=false
 		
 		motion.y+=GRAVITY
+		
 		var friction = false
+		
 		if Input.is_action_pressed("ui_right"):
 			motion.x=min(motion.x+ACCELLERATION,MAX_SPEED)
 			$Sprite.flip_h=false
@@ -47,8 +50,9 @@ func _physics_process(_delta):
 				$Sprite.play("Run")
 		else:
 			if(!is_hadoken_animation_active):
+
 				$Sprite.play("Idle")
-			friction=true
+				friction=true
 		
 		if is_on_floor():
 			secondJump=true
@@ -60,7 +64,7 @@ func _physics_process(_delta):
 		else:
 			if Input.is_action_just_pressed("ui_up"):
 				
-				if(secondJump):
+				if(secondJump && canIDoubleJump):
 					secondJump=false
 					motion.y=JUMP_HEIGHT/1.5
 					$JumpEffect.play()
@@ -75,6 +79,12 @@ func _physics_process(_delta):
 			if(friction):
 				motion.x=lerp(motion.x,0,0.05)
 		motion=move_and_slide(motion,UP)
+		
+		if get_slide_count() > 0:
+			for i in range (get_slide_count()):
+				if "Baddie" in get_slide_collision(i).collider.name:
+					hit( get_slide_collision(i).collider.position.x)
+		
 		pass
 	else:
 		$Sprite.play("EggExit")
@@ -105,6 +115,16 @@ func shoot():
 	hadoken.transform= Transform2D(rotationHadoken,hadokenpos)
 	get_parent().add_child((hadoken))
 
+func hit(enemyXPosition):
+	$AnimationPlayer.play("PlayerHit")
+	motion.y= JUMP_HEIGHT*0.7
+	
+	if position.x <= enemyXPosition:
+		motion.x = - 750
+	else:
+		motion.x= 750
+		
+
 func _on_Sprite_animation_finished():
 	animation_finished= true
 	var sprite = get_node("Sprite")
@@ -118,3 +138,4 @@ func _on_Sprite_animation_finished():
 func _on_Headband_body_entered(body):
 	if(body.is_in_group("player")):
 		canIShotHadoken=true
+
