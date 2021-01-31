@@ -116,13 +116,13 @@ func shoot():
 	hadoken.transform= Transform2D(rotationHadoken,hadokenpos)
 	get_parent().add_child((hadoken))
 
-func hit(enemyPosition):
+func hit(enemyXPosition):
 	if(!playerHit):
 		print("hit")
 		$AnimationPlayer.stop()
 		$AnimationPlayer.play("PlayerHit")
 		$Ouch.play()
-		self.enemyPosition= enemyPosition
+		self.enemyPosition= enemyXPosition
 		playerHit=true
 
 func _on_Sprite_animation_finished():
