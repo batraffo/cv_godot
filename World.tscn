@@ -237,5 +237,5 @@ volume_db = -10.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/TutorialFade = SubResource( 3 )
 anims/TutorialFade2 = SubResource( 4 )
-[connection signal="body_entered" from="Headband" to="Player" method="_on_Headband_body_entered"]
 [connection signal="body_entered" from="Headband" to="." method="_on_Headband_body_entered"]
+[connection signal="body_entered" from="Headband" to="Player" method="_on_Headband_body_entered"]

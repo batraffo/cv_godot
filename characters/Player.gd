@@ -16,6 +16,7 @@ var is_hadoken_animation_active=false
 var secondJump=true
 var canIShotHadoken=false
 var playerHit = false
+var enemyPosition = 0.0
 
 func _ready():
 	var sprite = get_node("Sprite")
@@ -78,7 +79,10 @@ func _physics_process(_delta):
 				if(friction):
 					motion.x=lerp(motion.x,0,0.05)
 		else:
-			motion.x= -750
+			if position.x <= enemyPosition:
+				motion.x = - 750
+			else:
+				motion.x= 750
 			motion.y= JUMP_HEIGHT*0.7
 			playerHit=false
 		motion=move_and_slide(motion,UP)
@@ -118,6 +122,7 @@ func hit(enemyPosition):
 		$AnimationPlayer.stop()
 		$AnimationPlayer.play("PlayerHit")
 		$Ouch.play()
+		self.enemyPosition= enemyPosition
 		playerHit=true
 
 func _on_Sprite_animation_finished():
