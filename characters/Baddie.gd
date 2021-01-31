@@ -28,6 +28,7 @@ func _physics_process(_delta):
 func die(reversed):
 	set_physics_process(false)
 	$CollisionShape2D.set_disabled(true)
+	$HitBox/CollisionShape2D.set_disabled(true)
 	$AnimatedSprite.stop()
 	$AudioStreamPlayer2D.play()
 	if !reversed:
@@ -37,3 +38,8 @@ func die(reversed):
 
 func _on_AnimationPlayer_animation_finished(_anim_name):
 	queue_free()
+
+
+func _on_HitBox_body_entered(body):
+	if (body.is_in_group("player")):
+		body.call_deferred("hit",position.x)

@@ -15,6 +15,7 @@ var animation_finished =false
 var is_hadoken_animation_active=false
 var secondJump=true
 var canIShotHadoken=false
+var playerHit = false
 
 func _ready():
 	var sprite = get_node("Sprite")
@@ -29,51 +30,57 @@ func _physics_process(_delta):
 		
 		motion.y+=GRAVITY
 		var friction = false
-		if Input.is_action_pressed("ui_right"):
-			motion.x=min(motion.x+ACCELLERATION,MAX_SPEED)
-			$Sprite.flip_h=false
-			is_left=false
-			$RayCastRight2D.set_enabled(true)
-			$RayCastLeft2D.set_enabled(false)
-			if(!is_hadoken_animation_active):
-				$Sprite.play("Run")
-		elif Input.is_action_pressed("ui_left"):
-			motion.x=max(motion.x-ACCELLERATION,-MAX_SPEED)
-			$Sprite.flip_h=true
-			is_left=true
-			$RayCastRight2D.set_enabled(false)
-			$RayCastLeft2D.set_enabled(true)
-			if(!is_hadoken_animation_active):
-				$Sprite.play("Run")
-		else:
-			if(!is_hadoken_animation_active):
-				$Sprite.play("Idle")
-			friction=true
+		if !playerHit:
+			if Input.is_action_pressed("ui_right"):
+				motion.x=min(motion.x+ACCELLERATION,MAX_SPEED)
+				$Sprite.flip_h=false
+				is_left=false
+				$RayCastRight2D.set_enabled(true)
+				$RayCastLeft2D.set_enabled(false)
+				if(!is_hadoken_animation_active):
+					$Sprite.play("Run")
+			elif Input.is_action_pressed("ui_left"):
+				motion.x=max(motion.x-ACCELLERATION,-MAX_SPEED)
+				$Sprite.flip_h=true
+				is_left=true
+				$RayCastRight2D.set_enabled(false)
+				$RayCastLeft2D.set_enabled(true)
+				if(!is_hadoken_animation_active):
+					$Sprite.play("Run")
+			else:
+				if(!is_hadoken_animation_active):
+					$Sprite.play("Idle")
+				friction=true
 		
-		if is_on_floor():
-			secondJump=true
-			if Input.is_action_just_pressed("ui_up"):
-				motion.y=JUMP_HEIGHT
-				$JumpEffect.play()
-			if(friction):
-				motion.x=lerp(motion.x,0,0.2)
-		else:
-			if Input.is_action_just_pressed("ui_up"):
-				
-				if(secondJump):
-					secondJump=false
-					motion.y=JUMP_HEIGHT/1.5
+		
+			if is_on_floor():
+				secondJump=true
+				if Input.is_action_just_pressed("ui_up"):
+					motion.y=JUMP_HEIGHT
 					$JumpEffect.play()
-			
-			#play animation
-			if(!is_hadoken_animation_active):
-				if(motion.y<0):
-					$Sprite.play("Jump")
-				else:
-					$Sprite.play("Fall")
-			
-			if(friction):
-				motion.x=lerp(motion.x,0,0.05)
+				if(friction):
+					motion.x=lerp(motion.x,0,0.2)
+			else:
+				if Input.is_action_just_pressed("ui_up"):
+					
+					if(secondJump):
+						secondJump=false
+						motion.y=JUMP_HEIGHT/1.5
+						$JumpEffect.play()
+				
+				#play animation
+				if(!is_hadoken_animation_active):
+					if(motion.y<0):
+						$Sprite.play("Jump")
+					else:
+						$Sprite.play("Fall")
+				
+				if(friction):
+					motion.x=lerp(motion.x,0,0.05)
+		else:
+			motion.x= -750
+			motion.y= JUMP_HEIGHT*0.7
+			playerHit=false
 		motion=move_and_slide(motion,UP)
 		pass
 	else:
@@ -104,6 +111,14 @@ func shoot():
 	var hadokenpos = Vector2(posxplustwenty,posyplustwenty) #it must start from the hands
 	hadoken.transform= Transform2D(rotationHadoken,hadokenpos)
 	get_parent().add_child((hadoken))
+
+func hit(enemyPosition):
+	if(!playerHit):
+		print("hit")
+		$AnimationPlayer.stop()
+		$AnimationPlayer.play("PlayerHit")
+		$Ouch.play()
+		playerHit=true
 
 func _on_Sprite_animation_finished():
 	animation_finished= true
