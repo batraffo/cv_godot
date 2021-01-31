@@ -17,6 +17,7 @@ var secondJump=true
 var canIShotHadoken=false
 var playerHit = false
 var enemyPosition = 0.0
+var canIDoubleJump = false
 
 func _ready():
 	var sprite = get_node("Sprite")
@@ -64,7 +65,7 @@ func _physics_process(_delta):
 			else:
 				if Input.is_action_just_pressed("ui_up"):
 					
-					if(secondJump):
+					if(secondJump && canIDoubleJump):
 						secondJump=false
 						motion.y=JUMP_HEIGHT/1.5
 						$JumpEffect.play()
@@ -138,3 +139,13 @@ func _on_Sprite_animation_finished():
 func _on_Headband_body_entered(body):
 	if(body.is_in_group("player")):
 		canIShotHadoken=true
+
+
+func _on_HighSchool_body_entered(body):
+	if(body.is_in_group("player")):
+		$AnimationPlayer.play("HighSchoolBlink")
+
+
+func _on_Book_body_entered(body):
+	if(body.is_in_group("player")):
+		canIDoubleJump =true

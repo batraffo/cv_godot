@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tree.png-d142989b70aa36d57ed258c1382d9c9e.stex"
+path="res://.import/pseudoSchool.png-cefa7e7857cebbcb0064a8fd543dbe68.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/tree.png"
-dest_files=[ "res://.import/tree.png-d142989b70aa36d57ed258c1382d9c9e.stex" ]
+source_file="res://assets/Sprites/things/pseudoSchool.png"
+dest_files=[ "res://.import/pseudoSchool.png-cefa7e7857cebbcb0064a8fd543dbe68.stex" ]
 
 [params]
 

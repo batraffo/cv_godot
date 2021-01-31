@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://assets/Sprites/Player/Idle0.png" type="Texture" id=1]
 [ext_resource path="res://assets/Sprites/Player/Jump3.png" type="Texture" id=2]
@@ -20,15 +20,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "Run",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 3 ) ],
 "loop": false,
@@ -139,23 +139,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=18]
-resource_name = "HighDateBlink"
-length = 1.8
-step = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Camera2D/CanvasLayer/Control/Panel/GridContainer/HighDate:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=19]
 length = 1.8
 step = 0.2
 tracks/0/type = "value"
@@ -170,8 +153,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera2D/CanvasLayer/Control/Panel/GridContainer/HighDate:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=19]
 resource_name = "InternshipBlink"
 length = 1.8
 step = 0.2
@@ -188,7 +183,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=20]
 length = 1.8
 step = 0.2
 tracks/0/type = "value"
@@ -228,7 +223,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=21]
 length = 1.8
 step = 0.2
 tracks/0/type = "value"
@@ -256,7 +251,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=22]
 resource_name = "PlayerHit"
 length = 1.1
 tracks/0/type = "value"
@@ -272,7 +267,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0.266667 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.266667 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.266667 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.266667 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.266667 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.266667 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=23]
 length = 1.8
 step = 0.2
 tracks/0/type = "value"
@@ -360,6 +355,7 @@ text = "Born: Torremaggiore, Italy
 	     13/07/1997"
 
 [node name="HighSchool" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 50.0
 margin_right = 163.0
 margin_bottom = 77.0
@@ -370,6 +366,7 @@ I.S.I.S.S. Fiani-Leccisotti"
 align = 1
 
 [node name="HighDate" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 82.0
 margin_right = 163.0
 margin_bottom = 107.0
@@ -645,13 +642,12 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/BornFading = SubResource( 17 )
-anims/HighDateBlink = SubResource( 18 )
-anims/HighSchoolBlink = SubResource( 19 )
-anims/InternshipBlink = SubResource( 20 )
-anims/PisaBlink = SubResource( 21 )
-anims/PisaEndBlink = SubResource( 22 )
-anims/PlayerHit = SubResource( 23 )
-anims/SkillTitleBlink = SubResource( 24 )
+anims/HighSchoolBlink = SubResource( 18 )
+anims/InternshipBlink = SubResource( 19 )
+anims/PisaBlink = SubResource( 20 )
+anims/PisaEndBlink = SubResource( 21 )
+anims/PlayerHit = SubResource( 22 )
+anims/SkillTitleBlink = SubResource( 23 )
 
 [node name="JumpEffect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 14 )
