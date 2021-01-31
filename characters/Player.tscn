@@ -40,14 +40,14 @@ animations = [ {
 "name": "EggExit",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": false,
-"name": "Jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": false,
 "name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "Jump",
 "speed": 5.0
 } ]
 
