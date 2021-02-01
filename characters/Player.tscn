@@ -20,15 +20,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "Run",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 3 ) ],
 "loop": false,
@@ -389,6 +389,7 @@ __meta__ = {
 }
 
 [node name="Pisa" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer2"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 163.0
 margin_bottom = 27.0
 size_flags_horizontal = 3
@@ -400,6 +401,7 @@ Computer Science"
 align = 1
 
 [node name="degree" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer2"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 31.0
 margin_right = 163.0
 margin_bottom = 43.0
@@ -412,6 +414,7 @@ __meta__ = {
 }
 
 [node name="Begin" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer2"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 47.0
 margin_right = 163.0
 margin_bottom = 58.0
@@ -420,6 +423,7 @@ custom_colors/font_color = Color( 0, 0.760784, 1, 1 )
 text = "   Begin: September 2015"
 
 [node name="End" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer2"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 62.0
 margin_right = 163.0
 margin_bottom = 73.0
@@ -428,6 +432,7 @@ custom_colors/font_color = Color( 0, 0.760784, 1, 1 )
 text = "   End: June 2020"
 
 [node name="Vote" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/GridContainer2"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 77.0
 margin_right = 163.0
 margin_bottom = 88.0
@@ -436,6 +441,7 @@ custom_colors/font_color = Color( 0, 0.760784, 1, 1 )
 text = "   Vote: 101/110"
 
 [node name="GridContainer3" type="GridContainer" parent="Camera2D/CanvasLayer/Control/Panel"]
+modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0

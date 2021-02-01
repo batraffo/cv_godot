@@ -149,3 +149,18 @@ func _on_HighSchool_body_entered(body):
 func _on_Book_body_entered(body):
 	if(body.is_in_group("player")):
 		canIDoubleJump =true
+
+
+func _on_PisaTower_body_entered(body):
+	if(body.is_in_group("player")):
+		$AnimationPlayer.play("PisaBlink")
+
+
+func _on_Desk_body_entered(body):
+	if(body.is_in_group("player")):
+		$AnimationPlayer.play("InternshipBlink")
+
+
+func _on_GraduateCap_body_entered(body):
+	if(body.is_in_group("player")):
+		$AnimationPlayer.play("PisaEndBlink")
