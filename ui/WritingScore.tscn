@@ -10,7 +10,7 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "GoUp"
-length = 1.4
+length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Label:rect_position")
 tracks/0/interp = 1
@@ -18,10 +18,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -50 ), Vector2( 0, -150 ) ]
+"values": [ Vector2( 0, -24 ), Vector2( 0, -50 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Label:self_modulate")
@@ -30,7 +30,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1, 1.4 ),
+"times": PoolRealArray( 0, 2.8, 3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -40,9 +40,9 @@ tracks/1/keys = {
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]
-margin_top = -50.0
+margin_top = -24.0
 margin_right = 194.0
-margin_bottom = -25.0
+margin_bottom = 1.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0.529412, 0.529412, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
