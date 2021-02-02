@@ -392,13 +392,17 @@ tile_data = PoolIntArray( -393070, 0, 0, -393069, 2, 0, -393068, 2, 0, -393067, 
 
 [node name="QuestionMarkBlock" parent="Blocks" instance=ExtResource( 17 )]
 position = Vector2( 7712, -32 )
+skillNumber = 1
 
 [node name="QuestionMarkBlock2" parent="Blocks" instance=ExtResource( 17 )]
 position = Vector2( 32, -32 )
 skillBuffa = true
+skillNumber = 1
+skillName = "Scrittabella"
 
 [node name="QuestionMarkBlock3" parent="Blocks" instance=ExtResource( 17 )]
 position = Vector2( 96, -32 )
+skillNumber = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/TutorialFade = SubResource( 3 )

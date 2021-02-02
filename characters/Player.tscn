@@ -30,6 +30,11 @@ animations = [ {
 "name": "Run",
 "speed": 10.0
 }, {
+"frames": [ ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "Hadoken",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 7 ) ],
 "loop": false,
 "name": "EggExit",
@@ -43,11 +48,6 @@ animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": false,
 "name": "Jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 3 ) ],
-"loop": false,
-"name": "Hadoken",
 "speed": 5.0
 } ]
 
@@ -482,6 +482,7 @@ text = "  Begin: March 2020
   End: May 2020"
 
 [node name="Skill" type="Label" parent="Camera2D/CanvasLayer/Control/Panel"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 280.0
 margin_right = 176.0
 margin_bottom = 295.0
@@ -504,7 +505,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Skill" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+[node name="Skill1" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 45.0
 margin_bottom = 11.0
 size_flags_horizontal = 3
@@ -513,6 +515,7 @@ custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- C/C++"
 
 [node name="Skill2" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 49.0
 margin_right = 110.0
 margin_bottom = 11.0
@@ -522,6 +525,7 @@ custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- Java"
 
 [node name="Skill3" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 114.0
 margin_right = 159.0
 margin_bottom = 11.0
@@ -531,6 +535,7 @@ custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- C#"
 
 [node name="Skill4" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 15.0
 margin_right = 45.0
 margin_bottom = 26.0
@@ -540,6 +545,7 @@ custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- Unity"
 
 [node name="Skill5" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 49.0
 margin_top = 15.0
 margin_right = 110.0
@@ -550,6 +556,7 @@ custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- Android"
 
 [node name="Skill6" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 114.0
 margin_top = 15.0
 margin_right = 159.0
@@ -560,6 +567,7 @@ custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- Godot"
 
 [node name="Skill7" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 30.0
 margin_right = 45.0
 margin_bottom = 41.0
@@ -569,6 +577,7 @@ custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- UX"
 
 [node name="Skill8" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 49.0
 margin_top = 31.0
 margin_right = 110.0
@@ -579,6 +588,7 @@ custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- Game Desing"
 
 [node name="Skill9" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 114.0
 margin_top = 30.0
 margin_right = 159.0
@@ -589,6 +599,7 @@ custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- AR"
 
 [node name="Skill10" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 45.0
 margin_right = 45.0
 margin_bottom = 60.0
@@ -600,6 +611,7 @@ text = "- Problem
 valign = 1
 
 [node name="Skill11" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 49.0
 margin_top = 49.0
 margin_right = 110.0
@@ -610,6 +622,7 @@ custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
 text = "- Communication"
 
 [node name="Skill12" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 114.0
 margin_top = 49.0
 margin_right = 159.0
@@ -621,6 +634,7 @@ text = "- Teamwork"
 valign = 1
 
 [node name="Skill 10 2" type="Label" parent="Camera2D/CanvasLayer/Control/Panel"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 12.0
 margin_top = 346.0
 margin_right = 63.0
