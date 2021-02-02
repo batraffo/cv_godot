@@ -164,3 +164,4 @@ func _on_Desk_body_entered(body):
 func _on_GraduateCap_body_entered(body):
 	if(body.is_in_group("player")):
 		$AnimationPlayer.play("PisaEndBlink")
+		$Camera2D/CanvasLayer/Control/Panel/GridContainer3.set_modulate(Color(1,1,1,1))

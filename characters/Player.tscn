@@ -30,11 +30,6 @@ animations = [ {
 "name": "Run",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 3 ) ],
-"loop": false,
-"name": "Hadoken",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 7 ) ],
 "loop": false,
 "name": "EggExit",
@@ -49,10 +44,15 @@ animations = [ {
 "loop": false,
 "name": "Jump",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "Hadoken",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 15.5
+radius = 16.0
 height = 25.0
 
 [sub_resource type="DynamicFont" id=3]
