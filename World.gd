@@ -69,4 +69,4 @@ func _on_GraduateCap_body_entered(body):
 		
 func _finish_game(body):
 	if body.is_in_group("player"):
-		get_tree().quit()
+		get_tree().change_scene("res://ui/StartScreen.tscn")
