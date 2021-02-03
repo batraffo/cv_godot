@@ -22,13 +22,21 @@ func _show_skill(body):
 		else:
 			$AudioStreamPlayer2DBuffo.play()
 		var score = SCORE_SCENE.instance()
-		score.get_node("Label").get_font("font").size= 16
+		score.get_node("Label").get_font("font").size= 30
 		if(!skillBuffa):
 			#i know it's bad
 			var player = get_parent().get_parent().get_node("Player")
 			var skill=player.get_node("Camera2D/CanvasLayer/Control/Panel/Skills/Skill"+str(skillNumber))
 			skill.set_self_modulate(Color(1,1,1,1))
-			score.get_node("Label").text=  skill.text.replace("-","+")
+			if(skillNumber==10):
+				var skill2=player.get_node("Camera2D/CanvasLayer/Control/Panel/Skill 10 2")
+				skill2.set_self_modulate(Color(1,1,1,1))
+				score.get_node("Label").text=  "+ Problem solving"
+					
+			elif(skillNumber==5):
+				score.get_node("Label").text=  "+ Android development"
+			else:
+				score.get_node("Label").text=  skill.text.replace("-","+")
 		else:
 			score.get_node("Label").add_color_override("font_color", Color( 0.6, 0.2, 0.8, 1 ))
 			score.get_node("Label").text= "+ " + skillName 

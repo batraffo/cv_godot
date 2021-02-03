@@ -10,7 +10,7 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "GoUp"
-length = 1.8
+length = 2.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Label:rect_position")
 tracks/0/interp = 1
@@ -18,10 +18,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
+"times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -32, -32 ), Vector2( -32, -100 ) ]
+"values": [ Vector2( -32, -32 ), Vector2( -32, -62 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Label:self_modulate")
@@ -30,7 +30,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1.6, 1.8 ),
+"times": PoolRealArray( 0, 2.2, 2.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]

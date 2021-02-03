@@ -41,6 +41,7 @@ tracks/1/keys = {
 b = Vector2( 64, 0 )
 
 [node name="QuestionMarkBlock" type="StaticBody2D"]
+scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
