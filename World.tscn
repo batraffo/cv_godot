@@ -440,7 +440,7 @@ skillNumber = 1
 skillName = "Pc Building"
 
 [node name="QuestionMarkBlock4" parent="Blocks" instance=ExtResource( 17 )]
-position = Vector2( 9056, -192 )
+position = Vector2( 9040, -192 )
 skillNumber = 8
 
 [node name="QuestionMarkBlock5" parent="Blocks" instance=ExtResource( 17 )]
@@ -472,7 +472,7 @@ position = Vector2( 9680, -176 )
 skillNumber = 9
 
 [node name="QuestionMarkBlock8" parent="Blocks" instance=ExtResource( 17 )]
-position = Vector2( 9184, -192 )
+position = Vector2( 9200, -192 )
 skillNumber = 7
 
 [node name="QuestionMarkBlock13" parent="Blocks" instance=ExtResource( 17 )]
