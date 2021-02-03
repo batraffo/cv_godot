@@ -585,7 +585,7 @@ margin_bottom = 40.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0.909804, 0.0117647, 0, 1 )
-text = "- Game Desing"
+text = "- Game Design"
 
 [node name="Skill9" type="Label" parent="Camera2D/CanvasLayer/Control/Panel/Skills"]
 self_modulate = Color( 1, 1, 1, 0 )

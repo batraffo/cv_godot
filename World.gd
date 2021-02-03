@@ -1,9 +1,21 @@
 extends Node2D
 
+var hitBlocks = 0
+
 onready var computer = get_node("Computer")
 onready var school = get_node("HighSchool")
 onready var pisa = get_node("PisaTower")
 onready var desk = get_node("Desk")
+onready var flag = get_node("Flag")
+
+
+func hit_all_block():
+	hitBlocks+= 1
+	if hitBlocks == 12:
+		print("Game Finished")
+		flag.show()
+		$Sounds/AudioStreamPlayer.play()
+		flag.connect("body_entered", self, "_finish_game")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -54,3 +66,7 @@ func _on_GraduateCap_body_entered(body):
 		$GraduateCap.hide()
 		$GraduateCap/AudioStreamPlayer2D.play()
 		$Storytelling/Label8.show()
+		
+func _finish_game(body):
+	if body.is_in_group("player"):
+		get_tree().quit()

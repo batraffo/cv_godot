@@ -25,6 +25,7 @@ func _show_skill(body):
 		score.get_node("Label").get_font("font").size= 30
 		if(!skillBuffa):
 			#i know it's bad
+			get_parent().get_parent().hit_all_block()
 			var player = get_parent().get_parent().get_node("Player")
 			var skill=player.get_node("Camera2D/CanvasLayer/Control/Panel/Skills/Skill"+str(skillNumber))
 			skill.set_self_modulate(Color(1,1,1,1))
