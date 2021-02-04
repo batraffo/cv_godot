@@ -69,5 +69,4 @@ func _on_GraduateCap_body_entered(body):
 		
 func _finish_game(body):
 	if body.is_in_group("player"):
-		if get_tree().change_scene("res://ui/Credits.tscn") != OK:
-				print("No Credits found")
+		$Player/AnimationPlayer.play("End")

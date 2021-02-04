@@ -173,3 +173,9 @@ func _on_Area2D_body_entered(body):
 		$Camera2D/CanvasLayer/Control/Panel/GridContainer2/End.set_self_modulate(Color(1,1,1,1))
 		$Camera2D/CanvasLayer/Control/Panel/GridContainer2/Vote.set_self_modulate(Color(1,1,1,1))
 		$Camera2D/CanvasLayer/Control/Panel/GridContainer3.set_modulate(Color(1,1,1,1))
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if(anim_name == "End"):
+		if get_tree().change_scene("res://ui/Credits.tscn") != OK:
+				print("No Credits found")

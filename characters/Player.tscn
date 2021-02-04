@@ -141,7 +141,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=24]
 resource_name = "End"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Panel2:modulate")
+tracks/0/path = NodePath("Camera2D/CanvasLayer/Control/Panel2:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -323,6 +323,16 @@ smoothing_enabled = true
 [node name="Control" type="Control" parent="Camera2D/CanvasLayer"]
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="Camera2D/CanvasLayer/Control"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 600.0
+margin_bottom = 320.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -661,16 +671,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel2" type="Panel" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 640.0
-margin_bottom = 360.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 follow_viewport_scale = 10.0
 
@@ -714,3 +714,4 @@ collision_mask = 1024
 
 [node name="Ouch" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 17 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
