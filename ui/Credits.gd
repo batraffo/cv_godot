@@ -23,19 +23,19 @@ func _on_AnimationPlayer_animation_finished(_anim_name):
 			#print("what?")
 	match creditScene:
 		1:
-			$Panel/VBoxContainer/What.text="Art"
-			$Panel/VBoxContainer/Who.text ="My beloved Rebecca Buccheri"
+			$HBoxContainer/Panel/VBoxContainer/What.text="Art"
+			$HBoxContainer/Panel/VBoxContainer/Who.text ="My beloved Rebecca Buccheri"
 			$AnimationPlayer.play("Credits")
 		2:
-			$Panel/VBoxContainer/What.text="Music"
-			$Panel/VBoxContainer/Who.text="TeknoAXE - A Brand New Adventure"
+			$HBoxContainer/Panel/VBoxContainer/What.text="Music"
+			$HBoxContainer/Panel/VBoxContainer/Who.text="TeknoAXE - A Brand New Adventure"
 			$AnimationPlayer.play("Credits")
 		3:
-			$Panel/VBoxContainer/What.text="Special Thanks"
-			$Panel/VBoxContainer/Who.text="Open"
+			$HBoxContainer/Panel/VBoxContainer/What.text="Special Thanks"
+			$HBoxContainer/Panel/VBoxContainer/Who.text="Open"
 			$AnimationPlayer.play("Credits")
 		CREDIT_SCENE_MAX:
-			$Panel/VBoxContainer/What.add_color_override("font_color", Color( 0.5, 1, 0, 1 ))
-			$Panel/VBoxContainer/What.text= "Press ESC to return to the Main Menu"
-			$Panel/VBoxContainer/Who.set_self_modulate(Color(1,1,1,0))
+			$HBoxContainer/Panel/VBoxContainer/What.add_color_override("font_color", Color( 0.5, 1, 0, 1 ))
+			$HBoxContainer/Panel/VBoxContainer/What.text= "Press ESC to return to the Main Menu"
+			$HBoxContainer/Panel/VBoxContainer/Who.set_self_modulate(Color(1,1,1,0))
 			$AnimationPlayer.play("End")
