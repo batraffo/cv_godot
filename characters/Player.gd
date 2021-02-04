@@ -131,7 +131,7 @@ func _on_Sprite_animation_finished():
 	var sprite = get_node("Sprite")
 	print("once")
 	get_node("AnimationPlayer").play("BornFading")
-	get_parent().get_node("Sounds/Music").play()
+	Music.play()
 	get_parent().get_node("AnimationPlayer").play("TutorialFade")
 	sprite.disconnect("animation_finished",self,"_on_Sprite_animation_finished")
 

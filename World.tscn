@@ -1,8 +1,7 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tile/DirtAutoTile.tres" type="TileSet" id=2]
-[ext_resource path="res://assets/sounds/A Brand New Adventure.ogg" type="AudioStream" id=3]
 [ext_resource path="res://characters/Baddie.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/PixelRPG.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://objects/Computer.tscn" type="PackedScene" id=6]
@@ -394,10 +393,6 @@ shape = SubResource( 3 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 19 )
 
-[node name="Music" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource( 3 )
-volume_db = -10.0
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 collision_use_kinematic = true
@@ -508,13 +503,13 @@ anims/TutorialFade = SubResource( 4 )
 anims/TutorialFade2 = SubResource( 5 )
 anims/TutorialFade3 = SubResource( 6 )
 anims/UniversityFade = SubResource( 7 )
-[connection signal="body_entered" from="Book" to="Player" method="_on_Book_body_entered"]
 [connection signal="body_entered" from="Book" to="." method="_on_Book_body_entered"]
-[connection signal="body_entered" from="Headband" to="Player" method="_on_Headband_body_entered"]
+[connection signal="body_entered" from="Book" to="Player" method="_on_Book_body_entered"]
 [connection signal="body_entered" from="Headband" to="." method="_on_Headband_body_entered"]
+[connection signal="body_entered" from="Headband" to="Player" method="_on_Headband_body_entered"]
 [connection signal="body_entered" from="HighSchool" to="Player" method="_on_HighSchool_body_entered"]
 [connection signal="body_entered" from="PisaTower" to="Player" method="_on_PisaTower_body_entered"]
 [connection signal="body_entered" from="Desk" to="Player" method="_on_Desk_body_entered"]
-[connection signal="body_entered" from="GraduateCap" to="Player" method="_on_GraduateCap_body_entered"]
 [connection signal="body_entered" from="GraduateCap" to="." method="_on_GraduateCap_body_entered"]
+[connection signal="body_entered" from="GraduateCap" to="Player" method="_on_GraduateCap_body_entered"]
 [connection signal="body_entered" from="Storytelling/Area2D" to="Player" method="_on_Area2D_body_entered"]

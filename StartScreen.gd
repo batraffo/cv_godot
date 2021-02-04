@@ -12,4 +12,5 @@ func _on_Quit_pressed():
 
 
 func _on_Start_Game_pressed():
-	get_tree().change_scene("res://World.tscn")
+	if get_tree().change_scene("res://World.tscn") != OK:
+		print ("An unexpected error occured when trying to switch to the Readme scene")
