@@ -6,6 +6,22 @@ var creditScene = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	for i in $HBoxContainer/Panel2.get_children():
+		i.set_modulate(Color (1,1,1,1))
+		i.set_self_modulate(Color (1,1,1,1))
+	for i in $HBoxContainer/Panel2/Skills.get_children():
+		i.set_modulate(Color (1,1,1,1))
+		i.set_self_modulate(Color (1,1,1,1))
+	for i in $HBoxContainer/Panel2/GridContainer.get_children():
+		i.set_modulate(Color (1,1,1,1))
+		i.set_self_modulate(Color (1,1,1,1))
+	for i in $HBoxContainer/Panel2/GridContainer2.get_children():
+		i.set_modulate(Color (1,1,1,1))
+		i.set_self_modulate(Color (1,1,1,1))
+	for i in $HBoxContainer/Panel2/GridContainer3.get_children():
+		i.set_modulate(Color (1,1,1,1))
+		i.set_self_modulate(Color (1,1,1,1))
+		
 	$AnimationPlayer.play("Credits")
 
 
