@@ -48,7 +48,7 @@ func _on_AnimationPlayer_animation_finished(_anim_name):
 			$AnimationPlayer.play("Credits")
 		3:
 			$HBoxContainer/Panel/VBoxContainer/What.text="Special Thanks"
-			$HBoxContainer/Panel/VBoxContainer/Who.text="Open"
+			$HBoxContainer/Panel/VBoxContainer/Who.text="Open Pixel Project\ndogchiken - opengameart.org"
 			$AnimationPlayer.play("Credits")
 		CREDIT_SCENE_MAX:
 			$HBoxContainer/Panel/VBoxContainer/What.add_color_override("font_color", Color( 0.5, 1, 0, 1 ))
