@@ -18,6 +18,7 @@ var canIShotHadoken=false
 var playerHit = false
 var enemyPosition = 0.0
 var canIDoubleJump = false
+var isChild= true
 
 func _ready():
 	var sprite = get_node("Sprite")
@@ -125,6 +126,10 @@ func hit(enemyXPosition):
 		$Ouch.play()
 		self.enemyPosition= enemyXPosition
 		playerHit=true
+	
+func set_adult():
+	isChild=false
+	print("grown-up")
 
 func _on_Sprite_animation_finished():
 	animation_finished= true

@@ -19,3 +19,4 @@ func _on_HighSchool_body_entered(body):
 			score.get_node("Label").text= "+ Mathematics Knowledge\n+ Physics Knowledge"
 			score.get_node("Label").get_font("font").size= 16
 			self.add_child(score)
+			body.set_adult()

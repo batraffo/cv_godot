@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tile/DirtAutoTile.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Oggetti/lavagna.png" type="Texture" id=3]
 [ext_resource path="res://characters/Baddie.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/PixelRPG.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://objects/Computer.tscn" type="PackedScene" id=6]
@@ -121,8 +122,8 @@ scale = Vector2( 0.5, 0.5 )
 
 [node name="Headband" parent="." instance=ExtResource( 8 )]
 visible = false
-position = Vector2( 1689, 44 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 1689, 40 )
+scale = Vector2( 0.4, 0.4 )
 
 [node name="Computer" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1500, 35 )
@@ -135,17 +136,21 @@ position = Vector2( 2971, -16 )
 position = Vector2( 5219, -49 )
 
 [node name="Desk" parent="." instance=ExtResource( 15 )]
-position = Vector2( 7264, 47 )
-scale = Vector2( 0.6, 0.6 )
+position = Vector2( 7264, 35 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="GraduateCap" parent="." instance=ExtResource( 16 )]
 visible = false
 position = Vector2( 7586, 24 )
-scale = Vector2( 0.2, 0.2 )
+scale = Vector2( 0.4, 0.4 )
 
 [node name="Flag" parent="." instance=ExtResource( 18 )]
 visible = false
 position = Vector2( 10504, 4 )
+
+[node name="lavagna" type="Sprite" parent="."]
+position = Vector2( 728, 44 )
+texture = ExtResource( 3 )
 
 [node name="JustTutorialThings" type="Node2D" parent="."]
 modulate = Color( 1, 1, 1, 0 )
