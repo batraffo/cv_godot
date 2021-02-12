@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/Sprites/things/pisa.png" type="Texture" id=1]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Oggetti/torre di pisa.png" type="Texture" id=1]
 [ext_resource path="res://objects/PisaTower.gd" type="Script" id=2]
 [ext_resource path="res://assets/sounds/coin3.wav" type="AudioStream" id=3]
 

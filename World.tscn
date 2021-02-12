@@ -134,6 +134,7 @@ position = Vector2( 2971, -16 )
 
 [node name="PisaTower" parent="." instance=ExtResource( 14 )]
 position = Vector2( 5219, -49 )
+scale = Vector2( 1.2, 1.2 )
 
 [node name="Desk" parent="." instance=ExtResource( 15 )]
 position = Vector2( 7264, 35 )
