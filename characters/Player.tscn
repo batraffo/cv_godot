@@ -1,61 +1,143 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=76 format=2]
 
-[ext_resource path="res://assets/Sprites/Player/Idle0.png" type="Texture" id=1]
-[ext_resource path="res://assets/Sprites/Player/Jump3.png" type="Texture" id=2]
-[ext_resource path="res://assets/Sprites/Player/Jump0.png" type="Texture" id=3]
-[ext_resource path="res://assets/Sprites/Player/Run0.png" type="Texture" id=4]
-[ext_resource path="res://assets/Sprites/Player/Run3.png" type="Texture" id=5]
-[ext_resource path="res://assets/Sprites/Player/Jump4.png" type="Texture" id=6]
-[ext_resource path="res://assets/Sprites/Player/Run4.png" type="Texture" id=7]
-[ext_resource path="res://assets/Sprites/Player/Run7.png" type="Texture" id=8]
-[ext_resource path="res://assets/Sprites/Player/Run1.png" type="Texture" id=9]
-[ext_resource path="res://assets/Sprites/Player/Run2.png" type="Texture" id=10]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss21.png" type="Texture" id=1]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss25.png" type="Texture" id=2]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss26.png" type="Texture" id=3]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/JUMP ANIMATION/picolo/raffo jump animation4.png" type="Texture" id=4]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss24.png" type="Texture" id=5]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/RUN ANIMATION/picolo/raffo run cycle6.png" type="Texture" id=6]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss22.png" type="Texture" id=7]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss23.png" type="Texture" id=8]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss20.png" type="Texture" id=9]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/JUMP ANIMATION/picolo/raffo jump animation10.png" type="Texture" id=10]
 [ext_resource path="res://ui/PanelCv.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/Sprites/Sky.png" type="Texture" id=12]
 [ext_resource path="res://characters/Player.gd" type="Script" id=13]
 [ext_resource path="res://assets/sounds/Jump_03.wav" type="AudioStream" id=14]
-[ext_resource path="res://assets/Sprites/Player/Jump1.png" type="Texture" id=15]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/HADOUKEN/picolo/raffo hadouken.png" type="Texture" id=15]
 [ext_resource path="res://assets/sounds/foom_0.wav" type="AudioStream" id=16]
 [ext_resource path="res://assets/sounds/Hit_02.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/IDLE ANIMATION/picolo/raffo idle anim1.png" type="Texture" id=18]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/IDLE ANIMATION/picolo/raffo idle anim2.png" type="Texture" id=19]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/RUN ANIMATION/picolo/raffo run cycle2.png" type="Texture" id=20]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/RUN ANIMATION/picolo/raffo run cycle4.png" type="Texture" id=21]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/JUMP ANIMATION/picolo/raffo jump animation6.png" type="Texture" id=22]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss9.png" type="Texture" id=23]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss5.png" type="Texture" id=24]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/JUMP ANIMATION/picolo/raffo jump animation5.png" type="Texture" id=25]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/RUN ANIMATION/picolo/raffo run cycle3.png" type="Texture" id=26]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/RUN ANIMATION/picolo/raffo run cycle7.png" type="Texture" id=27]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/JUMP ANIMATION/picolo/raffo jump animation8.png" type="Texture" id=28]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/JUMP ANIMATION/picolo/raffo jump animation9.png" type="Texture" id=29]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/JUMP ANIMATION/picolo/raffo jump animation7.png" type="Texture" id=30]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/RUN ANIMATION/picolo/raffo run cycle5.png" type="Texture" id=31]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss1.png" type="Texture" id=32]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss3.png" type="Texture" id=33]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss4.png" type="Texture" id=34]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss6.png" type="Texture" id=35]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss7.png" type="Texture" id=36]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/EGG ANIMATION/egg cracking animation34.png" type="Texture" id=37]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss8.png" type="Texture" id=38]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss10.png" type="Texture" id=39]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss11.png" type="Texture" id=40]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss12.png" type="Texture" id=41]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss17.png" type="Texture" id=42]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/EGG ANIMATION/egg cracking animation36.png" type="Texture" id=43]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss2.png" type="Texture" id=44]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss13.png" type="Texture" id=45]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss15.png" type="Texture" id=46]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss16.png" type="Texture" id=47]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss14.png" type="Texture" id=48]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss19.png" type="Texture" id=49]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/UOVO/egg cracking animationssss18.png" type="Texture" id=50]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/JUMP ANIMATION/grande/raffo grande jump animation10.png" type="Texture" id=51]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/JUMP ANIMATION/grande/raffo grande jump animation4.png" type="Texture" id=52]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/JUMP ANIMATION/grande/raffo grande jump animation8.png" type="Texture" id=53]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/JUMP ANIMATION/grande/raffo grande jump animation9.png" type="Texture" id=54]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/HADOUKEN/grande/raffo grande hadouken.png" type="Texture" id=55]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/JUMP ANIMATION/grande/raffo grande jump animation7.png" type="Texture" id=56]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/IDLE ANIMATION/grande/raffo idle anim2.png" type="Texture" id=57]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/IDLE ANIMATION/grande/raffo idle anim1.png" type="Texture" id=58]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/JUMP ANIMATION/grande/raffo grande jump animation5.png" type="Texture" id=59]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/RUN ANIMATION/grande/raffo grande run cycle7.png" type="Texture" id=60]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/RUN ANIMATION/grande/raffo grande run cycle6.png" type="Texture" id=61]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/RUN ANIMATION/grande/raffo grande run cycle4.png" type="Texture" id=62]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/RUN ANIMATION/grande/raffo grande run cycle3.png" type="Texture" id=63]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/RUN ANIMATION/grande/raffo grande run cycle2.png" type="Texture" id=64]
+[ext_resource path="res://assets/Sprites/beccaSprites/CV GIOCO RAF/Raffo/RUN ANIMATION/grande/raffo grande run cycle5.png" type="Texture" id=65]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "Idle",
+"name": "Hit",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 55 ), ExtResource( 55 ), ExtResource( 55 ) ],
+"loop": false,
+"name": "HadokenGrown",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 64 ), ExtResource( 63 ), ExtResource( 62 ), ExtResource( 65 ), ExtResource( 61 ), ExtResource( 60 ) ],
+"loop": true,
+"name": "RunGrown",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 52 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 56 ) ],
+"loop": false,
+"name": "JumpGrown",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 58 ), ExtResource( 57 ) ],
+"loop": true,
+"name": "IdleGrown",
+"speed": 2.5
+}, {
+"frames": [ ExtResource( 53 ), ExtResource( 54 ), ExtResource( 51 ) ],
+"loop": false,
+"name": "FallGrown",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 52 ) ],
+"loop": true,
+"name": "HitGrown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 31 ), ExtResource( 6 ), ExtResource( 27 ) ],
 "loop": true,
 "name": "Run",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 15 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 2.5
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ) ],
 "loop": false,
 "name": "Hadoken",
-"speed": 5.0
+"speed": 10.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 32 ), ExtResource( 32 ), ExtResource( 32 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 32 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 34 ), ExtResource( 34 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 36 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 37 ), ExtResource( 37 ), ExtResource( 43 ), ExtResource( 43 ), ExtResource( 43 ), ExtResource( 37 ), ExtResource( 37 ), ExtResource( 37 ), ExtResource( 43 ), ExtResource( 43 ), ExtResource( 43 ), ExtResource( 38 ), ExtResource( 23 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 42 ), ExtResource( 50 ), ExtResource( 49 ), ExtResource( 9 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": false,
 "name": "EggExit",
-"speed": 5.0
+"speed": 10.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 10 ) ],
 "loop": false,
 "name": "Fall",
-"speed": 5.0
+"speed": 10.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 30 ) ],
 "loop": false,
 "name": "Jump",
-"speed": 5.0
+"speed": 10.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 16.0
-height = 25.0
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 20.23 )
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=3]
 length = 1.8
 step = 0.2
 tracks/0/type = "value"
@@ -71,7 +153,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=4]
 resource_name = "End"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D/CanvasLayer/Control/Panel2:modulate")
@@ -86,7 +168,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=5]
 length = 1.8
 step = 0.2
 tracks/0/type = "value"
@@ -114,7 +196,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=6]
 resource_name = "InternshipBlink"
 length = 1.8
 step = 0.2
@@ -131,7 +213,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=7]
 length = 1.8
 step = 0.2
 tracks/0/type = "value"
@@ -171,7 +253,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=8]
 length = 1.8
 step = 0.2
 tracks/0/type = "value"
@@ -199,7 +281,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=9]
 resource_name = "PlayerHit"
 length = 1.1
 tracks/0/type = "value"
@@ -215,7 +297,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0.266667 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.266667 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.266667 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.266667 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.266667 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.266667 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=10]
 length = 1.8
 step = 0.2
 tracks/0/type = "value"
@@ -241,7 +323,7 @@ frames = SubResource( 1 )
 animation = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 4 )
+position = Vector2( 0, 11.7783 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -267,6 +349,7 @@ anchor_bottom = 1.0
 margin_right = 600.0
 margin_bottom = 320.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -287,14 +370,14 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/BornFading = SubResource( 17 )
-anims/End = SubResource( 24 )
-anims/HighSchoolBlink = SubResource( 18 )
-anims/InternshipBlink = SubResource( 19 )
-anims/PisaBlink = SubResource( 20 )
-anims/PisaEndBlink = SubResource( 21 )
-anims/PlayerHit = SubResource( 22 )
-anims/SkillTitleBlink = SubResource( 23 )
+anims/BornFading = SubResource( 3 )
+anims/End = SubResource( 4 )
+anims/HighSchoolBlink = SubResource( 5 )
+anims/InternshipBlink = SubResource( 6 )
+anims/PisaBlink = SubResource( 7 )
+anims/PisaEndBlink = SubResource( 8 )
+anims/PlayerHit = SubResource( 9 )
+anims/SkillTitleBlink = SubResource( 10 )
 
 [node name="JumpEffect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 14 )

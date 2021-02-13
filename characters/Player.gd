@@ -13,9 +13,11 @@ var motion=Vector2()
 
 var animation_finished =false
 var is_hadoken_animation_active=false
+var isOnAir = false
 var secondJump=true
 var canIShotHadoken=false
 var playerHit = false
+var playerHitAnimation = false
 var enemyPosition = 0.0
 var canIDoubleJump = false
 var isChild= true
@@ -28,7 +30,7 @@ func _physics_process(_delta):
 	if(animation_finished):
 		
 		#hadoken animation finished, maybe there is a better solution
-		if $Sprite.animation == "Hadoken" && $Sprite.frame == $Sprite.frames.get_frame_count("Hadoken")-1:
+		if ($Sprite.animation == "Hadoken" && $Sprite.frame == $Sprite.frames.get_frame_count("Hadoken")-1) or ($Sprite.animation == "HadokenGrown" && $Sprite.frame == $Sprite.frames.get_frame_count("HadokenGrown")-1):
 			is_hadoken_animation_active=false
 		
 		motion.y+=GRAVITY
@@ -36,28 +38,42 @@ func _physics_process(_delta):
 		if !playerHit:
 			if Input.is_action_pressed("ui_right"):
 				motion.x=min(motion.x+ACCELLERATION,MAX_SPEED)
-				$Sprite.flip_h=false
-				is_left=false
-				$RayCastRight2D.set_enabled(true)
-				$RayCastLeft2D.set_enabled(false)
 				if(!is_hadoken_animation_active):
-					$Sprite.play("Run")
+					$Sprite.flip_h=false
+					is_left=false
+					$RayCastRight2D.set_enabled(true)
+					$RayCastLeft2D.set_enabled(false)
+					if(not isOnAir):
+						if(isChild):
+							$Sprite.play("Run")
+						else:
+							$Sprite.play("RunGrown")
 			elif Input.is_action_pressed("ui_left"):
 				motion.x=max(motion.x-ACCELLERATION,-MAX_SPEED)
-				$Sprite.flip_h=true
-				is_left=true
-				$RayCastRight2D.set_enabled(false)
-				$RayCastLeft2D.set_enabled(true)
 				if(!is_hadoken_animation_active):
-					$Sprite.play("Run")
+					$Sprite.flip_h=true
+					is_left=true
+					$RayCastRight2D.set_enabled(false)
+					$RayCastLeft2D.set_enabled(true)
+					if(not isOnAir):
+						if(isChild):
+							$Sprite.play("Run")
+						else:
+							$Sprite.play("RunGrown")
 			else:
 				if(!is_hadoken_animation_active):
-					$Sprite.play("Idle")
+					if(not isOnAir):
+						if(isChild):
+							$Sprite.play("Idle")
+						else:
+							$Sprite.play("IdleGrown")
 				friction=true
 		
 		
 			if is_on_floor():
+				isOnAir=false
 				secondJump=true
+				playerHitAnimation=false
 				if Input.is_action_just_pressed("ui_up"):
 					motion.y=JUMP_HEIGHT
 					$JumpEffect.play()
@@ -68,15 +84,35 @@ func _physics_process(_delta):
 					
 					if(secondJump && canIDoubleJump):
 						secondJump=false
-						motion.y=JUMP_HEIGHT/1.5
+						motion.y=JUMP_HEIGHT/1.3
 						$JumpEffect.play()
 				
 				#play animation
 				if(!is_hadoken_animation_active):
 					if(motion.y<0):
-						$Sprite.play("Jump")
+						isOnAir= true
+						if(playerHitAnimation):
+							if(isChild):
+								$Sprite.play("Hit")
+							else:
+								$Sprite.play("HitGrown")
+						else:
+							if(isChild):
+								$Sprite.play("Jump")
+							else:
+								$Sprite.play("JumpGrown")
 					else:
-						$Sprite.play("Fall")
+						isOnAir=true
+						if(playerHitAnimation):
+							if(isChild):
+								$Sprite.play("Hit")
+							else:
+								$Sprite.play("HitGrown")
+						else:
+							if(isChild):
+								$Sprite.play("Fall")
+							else:
+								$Sprite.play("FallGrown")
 				
 				if(friction):
 					motion.x=lerp(motion.x,0,0.05)
@@ -90,6 +126,9 @@ func _physics_process(_delta):
 		motion=move_and_slide(motion,UP)
 		pass
 	else:
+		motion.y+=GRAVITY
+		#if I dont do this at the beginning of the game, the player will play fall animation for one frame
+		motion=move_and_slide(motion,UP)
 		$Sprite.play("EggExit")
 
 
@@ -100,7 +139,11 @@ func _unhandled_key_input(event):
 				if(get_parent().get_tree().get_nodes_in_group("hadoken").size() < 2):
 					$HadokenEffect.play()
 					is_hadoken_animation_active=true
-					$Sprite.play("Hadoken")
+					$Sprite.stop()
+					if(isChild):
+						$Sprite.play("Hadoken")
+					else:
+						$Sprite.play("HadokenGrown")
 					shoot()
 
 func shoot():
@@ -126,6 +169,7 @@ func hit(enemyXPosition):
 		$Ouch.play()
 		self.enemyPosition= enemyXPosition
 		playerHit=true
+		playerHitAnimation = true
 	
 func set_adult():
 	isChild=false

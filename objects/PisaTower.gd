@@ -16,4 +16,5 @@ func _on_PisaTower_body_entered(body):
 			#score.get_node("Label").get_font("font").size= 16
 			#score.get_node("Label").add_color_override("font_color", Color( 0.39, 0.58, 0.93, 1 ))
 			#self.add_child(score)
+			body.set_adult()
 			$AudioStreamPlayer2D.play()
