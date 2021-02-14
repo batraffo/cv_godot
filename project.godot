@@ -17,7 +17,8 @@ _global_script_class_icons={
 
 config/name="Cv Godot"
 run/main_scene="res://ui/StartScreen.tscn"
-config/icon="res://icon.png"
+config/icon="res://cvg.png"
+config/windows_native_icon="res://cvg.ico"
 
 [autoload]
 
