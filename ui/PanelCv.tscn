@@ -99,7 +99,8 @@ margin_right = 163.0
 margin_bottom = 15.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.807843, 1, 0, 1 )
-text = "Raffaele Ariano CV"
+text = "Raffaele Ariano"
+align = 1
 
 [node name="Born" type="Label" parent="GridContainer"]
 self_modulate = Color( 1, 1, 1, 0 )

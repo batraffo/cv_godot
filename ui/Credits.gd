@@ -1,6 +1,6 @@
 extends Control
 
-const CREDIT_SCENE_MAX=4
+const CREDIT_SCENE_MAX=5
 
 var creditScene = 0
 
@@ -50,8 +50,12 @@ func _on_AnimationPlayer_animation_finished(_anim_name):
 			$HBoxContainer/Panel/VBoxContainer/What.text="Special Thanks"
 			$HBoxContainer/Panel/VBoxContainer/Who.text="Open Pixel Project\ndogchiken - opengameart.org"
 			$AnimationPlayer.play("Credits")
+		4:
+			$HBoxContainer/Panel/VBoxContainer/What.text="Thanks for playing!"
+			$HBoxContainer/Panel/VBoxContainer/Who.text=""
+			$AnimationPlayer.play("Credits")
 		CREDIT_SCENE_MAX:
 			$HBoxContainer/Panel/VBoxContainer/What.add_color_override("font_color", Color( 0.5, 1, 0, 1 ))
-			$HBoxContainer/Panel/VBoxContainer/What.text= "Press ESC to return to the Main Menu"
+			$HBoxContainer/Panel/VBoxContainer/What.text= "Press ESC to return\nto the Main Menu"
 			$HBoxContainer/Panel/VBoxContainer/Who.set_self_modulate(Color(1,1,1,0))
 			$AnimationPlayer.play("End")
