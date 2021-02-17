@@ -4,7 +4,8 @@
 [ext_resource path="res://assets/PixelRPG.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 25
+size = 26
+extra_spacing_bottom = 5
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -28,7 +29,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/margin_right = 0
-custom_constants/margin_top = 20
+custom_constants/margin_top = 30
 custom_constants/margin_left = 0
 custom_constants/margin_bottom = 20
 __meta__ = {
@@ -36,26 +37,29 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_left = 168.0
-margin_top = 20.0
-margin_right = 472.0
-margin_bottom = 340.0
+margin_left = 192.0
+margin_top = 30.0
+margin_right = 447.0
+margin_bottom = 493.0
 size_flags_horizontal = 4
 custom_constants/separation = 100
 
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
-margin_right = 304.0
-margin_bottom = 26.0
+margin_right = 255.0
+margin_bottom = 102.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0.984314, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Raffaele Ariano CV"
+text = "
+Raffaele Ariano
+RESUME"
+align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_left = 90.0
-margin_top = 126.0
-margin_right = 214.0
-margin_bottom = 185.0
+margin_left = 65.0
+margin_top = 202.0
+margin_right = 189.0
+margin_bottom = 261.0
 size_flags_horizontal = 4
 custom_constants/separation = 13
 
