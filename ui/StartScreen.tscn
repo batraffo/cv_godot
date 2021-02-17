@@ -16,10 +16,10 @@ font_data = ExtResource( 2 )
 [node name="StartScreen" type="Node"]
 script = ExtResource( 1 )
 
-[node name="BGGraphics" type="Panel" parent="."]
-modulate = Color( 0.0705882, 1, 0.215686, 1 )
+[node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+color = Color( 0.0588235, 0.196078, 0.00392157, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
